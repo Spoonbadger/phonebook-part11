@@ -21,7 +21,7 @@ jobs:
           npm install
       - name: build
         run: |
-          npm run build:ui
+          npm run build
 
   tag-release:
     needs: simple_deployment_pipeline
