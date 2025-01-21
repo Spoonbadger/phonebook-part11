@@ -8,11 +8,8 @@ primary_region = 'sjc'
 
 [build]
 
-[env]
-  PORT = "3003"
-
 [http_service]
-  internal_port = 3003
+  internal_port = 80
   force_https = true
   auto_stop_machines = true
   auto_start_machines = true
