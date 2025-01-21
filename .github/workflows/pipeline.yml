@@ -16,12 +16,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install dependencies
+      - name: Install frontend dependencies
         run: |
+          cd phonebook_frontend_copy
           npm install
-      - name: build
+      - name: build frontend
         run: |
+          cd phonebook_frontend_copy
           npm run build
+      - name: install backend dependencies
+        run: |
+          cd phonebook_backend_copy
+          npm install
+          
   tag_release:
     needs: deployment_pipeline
     runs-on: ubuntu-20.04
