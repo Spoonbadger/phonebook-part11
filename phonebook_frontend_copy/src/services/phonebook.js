@@ -1,4 +1,4 @@
-import axios from 'redaxios'
+import axios from 'axios/axios.js'
 const baseUrl = '/api/persons'
 
 const getAll = () => {
