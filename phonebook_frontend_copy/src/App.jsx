@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
 import phonebookService from './services/phonebook'
 
 
+// eslint-disable-next-line react/prop-types
 const Notification = ({ message }) => {
   const errorStyle = {
     color: 'green',
@@ -23,6 +23,7 @@ const Notification = ({ message }) => {
   )
 }
 
+// eslint-disable-next-line react/prop-types
 const Filter = ({ searchInput, newSearch }) => {
   return (
     <div>
@@ -32,6 +33,7 @@ const Filter = ({ searchInput, newSearch }) => {
   )
 }
 
+// eslint-disable-next-line react/prop-types
 const PersonsForm = ({ formSubmit, nameInput, newName, numberInput, newNumber }) => {
   return (
     <form onSubmit={ formSubmit } >
@@ -44,6 +46,7 @@ const PersonsForm = ({ formSubmit, nameInput, newName, numberInput, newNumber })
   )
 }
 
+// eslint-disable-next-line react/prop-types
 const Persons = ({ searchPersons, removePerson }) =>
   <>
     {searchPersons.map(person =>
@@ -51,6 +54,7 @@ const Persons = ({ searchPersons, removePerson }) =>
     )}
   </>
 
+// eslint-disable-next-line react/prop-types
 const Person = ({ person, removePerson }) => {
 
   const handleDelete = () => {

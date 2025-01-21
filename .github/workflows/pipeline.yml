@@ -16,6 +16,33 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - name: Install dependencies
+      - name: Install frontend dependencies
         run: |
+          cd phonebook_frontend_copy
           npm install
+      - name: build frontend
+        run: |
+          cd phonebook_frontend_copy
+          npm run build
+      - name: install backend dependencies
+        run: |
+          cd phonebook_backend_copy
+          npm install
+
+  tag_release:
+    needs: deployment_pipeline
+    runs-on: ubuntu-20.04
+    if: ${{ !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: bump version and push tag
+        uses: anothrNick/github-tag-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+          PRERELEASE: true
+
+# code delete me
