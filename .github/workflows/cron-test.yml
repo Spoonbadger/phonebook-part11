@@ -1,0 +1,15 @@
+name: daily-cron-pbook-test
+
+on:
+  schedule:
+    - cron: '38 * * * *'
+
+
+jobs:
+  test_schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check the site everyday??
+        uses: jtalk/url-health-check-action@v4
+        with:
+          url: 
