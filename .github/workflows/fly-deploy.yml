@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy -a pbook-fb --config /home/runner/work/phonebook-part11/fly.toml
+      - run: flyctl deploy -a phonebook-part11 --config /home/runner/work/phonebook-part11/fly.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
