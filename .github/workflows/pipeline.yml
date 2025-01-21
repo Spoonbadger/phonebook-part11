@@ -45,4 +45,4 @@ jobs:
           DEFAULT_BUMP: patch
           PRERELEASE: true
 
-# code delete me
+# settings in github actions changed to allow permission to write git_token
