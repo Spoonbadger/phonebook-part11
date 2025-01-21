@@ -37,8 +37,9 @@ RUN npm prune --omit=dev
 # Final stage for app image
 FROM nginx
 
+
 # Copy built application
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/phonebook_frontend_copy/dist /usr/share/nginx/html
 
 # Expose port
 EXPOSE 80
