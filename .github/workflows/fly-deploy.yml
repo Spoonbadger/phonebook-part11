@@ -14,8 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: superfly/flyctl-actions/setup-flyctl@master
-      - run: flyctl deploy -a pbook-fb --remote-only
+      - run: flyctl deploy -a pbook-fb --config /home/runner/work/phonebook-part11/fly.toml
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
-# token now added to github secrets
